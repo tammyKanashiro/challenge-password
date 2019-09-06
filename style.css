@@ -1,0 +1,69 @@
+.border-position{   
+    border: "1px solid #000";
+    color: #000;
+    box-shadow: 0 0 20px 2px;
+    width: 350px;
+    height:200px;
+    position: absolute;
+    top: 150px;
+    left: 450px;
+}
+
+.border-position input{
+    width: 90%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 20px;
+    font
+}
+
+.main-style{
+    width: 80%;
+    height: 30px;
+    margin: 31px 0 4px 10px;
+    border-bottom: 3px solid #000;
+    font-family: 'Arial';
+    font-size: 25px;
+    font-weight: 500;    
+}
+
+.text-style{
+    width: 80%;
+    height: 30px;
+    margin: 15px 0 4px 10px;
+    font-family: 'Arial';
+    font-size: 20px;
+    font-weight: 500; 
+}
+
+.eye{
+    position: absolute;
+    margin-left: 30px;
+}
+
+.face{
+    position: absolute;
+   
+    margin-right: 10px;
+}
+
+#hide{
+    display: none;
+}
+
+#smile{
+    display: none;
+    color: green;
+}
+
+#neutral{
+    display: none;
+    color: olive;
+}
+
+#sad{
+    display: none;
+    color: red;
+}

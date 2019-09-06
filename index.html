@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!---https://fontawesome.com/v4.7.0/-->
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        
+        <div class="border-position">
+            <div>
+                <p class="text-style">Password</p>
+                <p class="text-style">Strength state <span id="strength"></span></p>
+            </div>
+            <div class="main-style">
+                <input name="strengthPass" id="password" type="password" placeholder="Password" onkeyup="showStrength()"/>
+                <span class="eye" onclick="showPass()">
+                    <i id="show" class="fa fa-eye"></i>
+                    <i id="hide" class="fa fa-eye-slash"></i>
+                </span>
+                <span class="face">
+                    <i id="smile" class="fa fa-smile-o"></i>
+                    <i id="neutral" class="fa fa-meh-o"></i>
+                    <i id="sad" class="fa fa-frown-o"></i>
+                </span>
+            </div>
+        </div>
+
+    </body>
+</html>
