@@ -3,7 +3,7 @@ function showPass(){
 }
 
 function showStrength(){
-    passInfo.setPass(document.getElementById('password'));
+    passInfo.password = document.getElementById('password');
     passInfo.stateUpdate();
 }
 
@@ -12,60 +12,61 @@ class Login{
         this.password;
     }
 
-    setPass(pass){
+    password(pass){
         this.password = pass;
     }
 
     stateUpdate(){
-        let msg = document.getElementById("msg");
-        let strength = document.getElementById("strength");
-        const smile = document.getElementById("smile");
-        const neutral = document.getElementById("neutral");
-        const sad = document.getElementById("sad");
+        let msg = "";
+        let strengthInfo = "";
+        let strengthColor = "";
+        let smile = "none";
+        let neutral = "none";
+        let sad = "none";
     
         if(password.value.length == 0){
-            msg.innerText = "Original State";
-            strength.innerText = "";
-            smile.style.display = "none";
-            neutral.style.display = "none";
-            sad.style.display = "none";
+            msg = "Original State";
+            sad = "none";
         }else if(password.value.length <= 3){
-            msg.innerText = "Strength State: ";
-            strength.innerText = "BAD";
-            strength.style.color = "red";
-            smile.style.display = "none";
-            neutral.style.display = "none";
-            sad.style.display = "block";
+            msg = "Strength State: ";
+            strengthInfo = "BAD";
+            strengthColor = "red";
+            sad = "block";
         }else if( password.value.length > 3 && password.value.length <= 6){
-            msg.innerText = "Strength State: ";
-            strength.innerText = "MEDIUM";
-            strength.style.color = "olive";
-            smile.style.display = "none";
-            neutral.style.display = "block";
-            sad.style.display = "none";
+            msg = "Strength State: ";
+            strengthInfo = "MEDIUM";
+            strengthColor = "olive";
+            neutral = "block";
         }else if(password.value.length > 6){
-            msg.innerText = "Strength State: ";
-            strength.innerText = "GOOD";
-            strength.style.color = "green";
-            smile.style.display = "block";
-            neutral.style.display = "none";
-            sad.style.display = "none";
+            msg = "Strength State: ";
+            strengthInfo = "GOOD";
+            strengthColor = "green";
+            smile = "block";
         }
+
+        document.getElementById("msg").innerText = msg;
+        document.getElementById("strength").innerText = strengthInfo;
+        document.getElementById("strength").color = strengthColor;
+        document.getElementById("smile").style.display = smile;
+        document.getElementById("neutral").style.display = neutral;
+        document.getElementById("sad").style.display = sad;
     }
 
     revealedState(){
-        let show = document.getElementById("show");
-        let hide = document.getElementById("hide");
+        let passType = "text";
+        let show = "none";
+        let hide = "none";
 
-        if(password.type === 'password'){
-            password.type = "text";
-            show.style.display = "none";
-            hide.style.display = "block";
+        if(this.password.type === 'password'){
+            hide = "block";
         }else{
-            password.type = "password";
-            show.style.display = "block";
-            hide.style.display = "none";
+            passType = "password";
+            show = "block";
         }
+
+        document.getElementById("show").style.display = show;
+        document.getElementById("hide").style.display = hide;
+        this.password.type = passType;
     }
 }
 
